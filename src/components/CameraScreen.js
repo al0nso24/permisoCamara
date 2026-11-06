@@ -1,14 +1,15 @@
-// Ejemplo 1: pedir el permiso de cámara al pulsar un botón.
+// Ejemplo 1: Pedir el permiso de cámara al pulsar un botón
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+//CameraView es la vista de la cámara
 import { Camera, CameraView } from 'expo-camera';
 
 export default function CameraScreen() {
-    //'pendiente' significa que todavía no hemos preguntado nada.
+    //'pendiente' significa que todavía no hemos preguntado nada
     const[estado, setEstado] = useState('pendiente');
     const pedirPermiso = async () => {
-        //Esta línea abre el cuadro del sistema y espera la respuesta.
+        //Esta línea abre el cuadro del sistema y espera la respuesta
         const { status } = await Camera.requestCameraPermissionsAsync();
         setEstado(status); //'granted' (concedido) o 'denied'
         ("denegado")
@@ -30,7 +31,7 @@ export default function CameraScreen() {
                 <Text style={[styles.texto, styles.rojo]}>Permiso
                     denegado</Text>
             )}
-            {/*La cámara solo se muestra si el usuario dio permiso.*/}
+            {/*La cámara solo se muestra si el usuario dio permiso*/}
             {estado === 'granted' ? (
                 <CameraView style={styles.camara} facing="back" />
             ) : (
