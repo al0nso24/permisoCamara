@@ -4,14 +4,14 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Camera, CameraView } from 'expo-camera';
 
-export default function Camera() {
+export default function CameraScreen() {
     //'pendiente' significa que todavía no hemos preguntado nada.
     const[estado, setEstado] = useState('pendiente');
     const pedirPermiso = async () => {
         //Esta línea abre el cuadro del sistema y espera la respuesta.
         const { status } = await Camera.requestCameraPermissionsAsync();
         setEstado(status); //'granted' (concedido) o 'denied'
-        (denegado)
+        ("denegado")
     };
 
     return (

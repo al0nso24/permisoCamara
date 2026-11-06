@@ -1,10 +1,10 @@
-import { Camera } from 'expo-camera';
 import { StyleSheet, View } from 'react-native';
+import CameraScreen from './src/components/CameraScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Camera></Camera>
+      <CameraScreen></CameraScreen>
     </View>
   );
 }
